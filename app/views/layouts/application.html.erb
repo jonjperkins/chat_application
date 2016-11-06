@@ -11,14 +11,14 @@
   <body>
     <%= render 'layouts/header' %>
     
-   <div id="wrapper">
+   <div id="wrapper" style="margin-top: 51px">
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <% if user_signed_in? %>
               <h5>Chatrooms</h5>
               <ul>
                 <% current_user.chatrooms.each do |chatroom|  %>
-                  <li><%= link_to chatroom.name, '#' %></li>
+                  <li><%= link_to chatroom.name, chatroom %></li>
                   <% end %>
               </ul>
             <% end %>  
@@ -28,7 +28,7 @@
         <div class="page-content">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-sm-11">
                         <%= yield %>
                     </div>
                 </div>
